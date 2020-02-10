@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Here image is a n*3 array
-def grayscale(image,image_name):
+def convert(image,image_name):
     avg = 0
     width,height = image.shape[:2]
     new_image = np.zeros([width,height,3])
@@ -22,12 +22,13 @@ def grayscale(image,image_name):
     
     gray_image_name = "Gray_" + image_name
     mat.imsave(gray_image_name,new_image)
-    plt.imshow(new_image)
-    plt.show()
-    print("Your Image stored in the following folder with the name : " , gray_image_name)
+    #plt.imshow(new_image)
+    #plt.show()
+    print("Your Gray Image stored in the following folder with the name : " , gray_image_name)
     return new_image
 
 if __name__ == "__main__":
     actual_image = input("Enter Image Name : ")
     image = mat.imread(actual_image)
-    grayscale(image,actual_image)
+    convert(image,actual_image)
+ 
