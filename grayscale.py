@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def grayscale(image,image_name):
     avg = 0
     width,height = image.shape[:2]
-    new_image = np.zeros([width,height,4])
+    new_image = np.zeros([width,height,3])
     
 
     for i in range(width):
@@ -15,7 +15,6 @@ def grayscale(image,image_name):
             sum = float(image[i][j][0]) + float(image[i][j][1]) + float(image[i][j][2])
             avg = (sum/3)/256
 
-            new_image[i][j][3] = 1
             new_image[i][j][0] = avg
             new_image[i][j][1] = avg
             new_image[i][j][2] = avg
