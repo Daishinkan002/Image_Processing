@@ -14,7 +14,6 @@ def nearest_neighbour(image,image_name,height , width ):
 
     new_image = np.zeros([width,height,3])
     image = grayscale.convert(image,image_name)
-    #print("Width_Scaling_factor : ", width_scaling_factor , " Height Scaling Factor : ", height_scaling_factor)
     for i in range(width):
         for j in range(height):
             new_image[i][j] = image[int(i/width_scaling_factor),int(j/height_scaling_factor)]
@@ -37,7 +36,6 @@ if __name__ == "__main__":
     image_name = input("Enter image name : ")
     image = img.imread(image_name)
     print("Size of Given Image (width,height): ", image.shape[:2])
-    new_height = int(input("Enter new width : "))
-    new_width = int(input("Enter new height : "))
-    #print(image,image_name , new_height, new_width)
-    nearest_neighbour(image,image_name,new_height,new_width)
+    new_width = int(input("Enter new width : "))
+    new_height = int(input("Enter new height : "))
+    nearest_neighbour(image,image_name,new_width,new_height)
